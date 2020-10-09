@@ -2138,7 +2138,7 @@ description = ""
 name = "nr-common"
 optional = false
 python-versions = "^3.8"
-version = "3.0.0a8"
+version = "3.0.0a9"
 
 [package.dependencies]
 idutils = "^1.1.8"
@@ -2157,13 +2157,38 @@ docs = ["sphinx (^1.5.1)"]
 tests = ["oarepo (^3.3)", "pytest (^5.0.0)", "pytest-cov (^2.10.1)"]
 
 [package.source]
-reference = "75b611262ed2bc842e1e56aa06af44f5722be601"
+reference = "f1dce84b1c52914c489ef8e7efea7075772a58cb"
 type = "git"
 url = "https://github.com/Narodni-repozitar/nr-common.git"
 [[package]]
 category = "main"
 description = ""
 name = "nr-events"
+optional = false
+python-versions = "^3.8"
+version = "1.0.0a5"
+
+[package.dependencies]
+nr-common = "branch master"
+oarepo-invenio-model = "^2.0.1"
+oarepo-multilingual = "^2.2.0"
+oarepo-records-draft = "^5.0.0a7"
+oarepo-references = "^1.8.1"
+oarepo-taxonomies = "^2.4.1"
+oarepo-validate = "^1.2.8"
+pytest-runner = "^5.2"
+
+[package.extras]
+tests = ["oarepo (^3.3)", "pytest (^5.0.0)", "pytest-cov (^2.10.1)"]
+
+[package.source]
+reference = "daf9e6bad40ac37a945a850ff6bea64a9837c22e"
+type = "git"
+url = "https://github.com/Narodni-repozitar/nr-events.git"
+[[package]]
+category = "main"
+description = ""
+name = "nr-nresults"
 optional = false
 python-versions = "^3.8"
 version = "1.0.0a4"
@@ -2182,32 +2207,7 @@ pytest-runner = "^5.2"
 tests = ["oarepo (^3.3)", "pytest (^5.0.0)", "pytest-cov (^2.10.1)"]
 
 [package.source]
-reference = "0a68854040bb1a61c1479061d16805977de5716d"
-type = "git"
-url = "https://github.com/Narodni-repozitar/nr-events.git"
-[[package]]
-category = "main"
-description = ""
-name = "nr-nresults"
-optional = false
-python-versions = "^3.8"
-version = "1.0.0a3"
-
-[package.dependencies]
-nr-common = "branch master"
-oarepo-invenio-model = "^2.0.1"
-oarepo-multilingual = "^2.2.0"
-oarepo-records-draft = "^5.0.0a7"
-oarepo-references = "^1.8.1"
-oarepo-taxonomies = "^2.4.1"
-oarepo-validate = "^1.2.8"
-pytest-runner = "^5.2"
-
-[package.extras]
-tests = ["oarepo (^3.3)", "pytest (^5.0.0)", "pytest-cov (^2.10.1)"]
-
-[package.source]
-reference = "f2f6739c173ccffa9c7467518d9b46602d1297c3"
+reference = "af813a22c94a0ccd2c49d37c1b52275cd48a1598"
 type = "git"
 url = "https://github.com/Narodni-repozitar/nr-Nresults.git"
 [[package]]
@@ -2216,7 +2216,7 @@ description = ""
 name = "nr-theses"
 optional = false
 python-versions = "^3.8"
-version = "3.0.0a4"
+version = "3.0.0a5"
 
 [package.dependencies]
 nr-common = "branch master"
@@ -2234,7 +2234,7 @@ docs = ["sphinx (>=1.5.1)"]
 tests = ["oarepo (^3.3)", "pytest (^5.0.0)"]
 
 [package.source]
-reference = "d3095b8e5cb8b17608e1959257787695dc49420f"
+reference = "f714287a35808bf6a2a8094e6318dc519609189d"
 type = "git"
 url = "https://github.com/Narodni-repozitar/nr-theses.git"
 [[package]]
