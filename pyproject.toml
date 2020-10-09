@@ -1,11 +1,16 @@
 [tool.poetry]
-name = "nr_all"
+name = "nr-all"
 version = "1.0.0a1"
 description = "Czech National Repository index that store all records from all metadata models"
 authors = ["Daniel Kopecký <Daniel.Kopecky@techlib.cz>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+nr-common = { git = "https://github.com/Narodni-repozitar/nr-common.git", branch = "master" }
+nr-theses = { git = "https://github.com/Narodni-repozitar/nr-theses.git", branch = "master" }
+nr-Nresults = { git = "https://github.com/Narodni-repozitar/nr-Nresults.git", branch = "master" }
+nr-events = { git = "https://github.com/Narodni-repozitar/nr-events.git", branch = "master" }
+
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
@@ -15,3 +20,9 @@ oarepo = "^3.3.0"
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+
+[tool.poetry.plugins."invenio_pidstore.minters"]
+'nr_all' = 'nr_all.minters:nr_all_id_minter'
+
+[tool.poetry.plugins."invenio_pidstore.fetchers"]
+'nr_all' = 'nr_all.fetchers:nr_all_id_fetcher'
