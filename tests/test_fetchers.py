@@ -7,7 +7,8 @@ from nr_theses.record import PublishedThesisRecord
 from nr_all.fetchers import nr_all_id_fetcher
 
 
-def test_nr_nresults_id_fetcher(app, db, base_json, taxonomy_tree, nresult_data, theses_data, events_data):
+def test_nr_nresults_id_fetcher(app, db, base_json, taxonomy_tree, nresult_data, theses_data,
+                                events_data):
     id_field = "control_number"
     nresult_data["control_number"] = "1"
     theses_data["control_number"] = "2"
@@ -27,3 +28,7 @@ def test_nr_nresults_id_fetcher(app, db, base_json, taxonomy_tree, nresult_data,
     assert fetched_theses.pid_value == theses_data[id_field]
     assert fetched_events.pid_type == "nrevt"
     assert fetched_events.pid_value == events_data[id_field]
+
+
+def test_entry_points(app):
+    assert 'nr_all' in app.extensions['invenio-pidstore'].fetchers.keys()

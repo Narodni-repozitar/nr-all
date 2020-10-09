@@ -28,11 +28,10 @@ from invenio_pidstore import InvenioPIDStore
 from invenio_pidstore.providers.recordid import RecordIdProvider
 from invenio_records import InvenioRecords
 from invenio_records_rest import InvenioRecordsREST
-from invenio_records_rest.schemas.fields import SanitizedUnicode
 from invenio_records_rest.utils import PIDConverter
 from invenio_records_rest.views import create_blueprint_from_app
 from invenio_search import InvenioSearch
-from marshmallow import Schema
+from nr_nresults.ext import NRNresults
 from oarepo_mapping_includes.ext import OARepoMappingIncludesExt
 from oarepo_records_draft.ext import RecordsDraft
 from oarepo_references import OARepoReferences
@@ -40,7 +39,7 @@ from oarepo_taxonomies.cli import init_db
 from oarepo_taxonomies.ext import OarepoTaxonomies
 from sqlalchemy_utils import database_exists, create_database, drop_database
 
-from nr_nresults.ext import NRNresults
+from nr_all.ext import NRAll
 from tests.helpers import set_identity
 
 
@@ -91,7 +90,7 @@ def app():
     InvenioRecords(app)
     InvenioRecordsREST(app)
     InvenioCelery(app)
-    NRNresults(app)
+    NRAll(app)
     InvenioPIDStore(app)
     # Invenio Records Draft initialization
     RecordsDraft(app)
