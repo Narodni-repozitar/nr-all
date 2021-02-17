@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nr-all"
-version = "1.0.1a1"
+version = "1.0.0a2"
 description = "Czech National Repository index that store all records from all metadata models"
 authors = ["Daniel Kopecký <Daniel.Kopecky@techlib.cz>"]
 
