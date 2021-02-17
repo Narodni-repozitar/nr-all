@@ -10,9 +10,11 @@ nr-common = { git = "https://github.com/Narodni-repozitar/nr-common.git", branch
 nr-theses = { git = "https://github.com/Narodni-repozitar/nr-theses.git", branch = "master" }
 nr-Nresults = { git = "https://github.com/Narodni-repozitar/nr-Nresults.git", branch = "master" }
 nr-events = { git = "https://github.com/Narodni-repozitar/nr-events.git", branch = "master" }
-oarepo = { version = "^3.3", optional = true }
-pytest = { version = "^5.0.0", optional = true }
-pytest-cov = { version = "^2.10.1", optional = true }
+
+[tool.poetry.dev-dependencies]
+oarepo = "^3.3"
+pytest = "^5.0.0"
+pytest-cov = "^2.10.1"
 
 [tool.poetry.extras]
 tests = ["oarepo", "pytest", "pytest-cov"]
