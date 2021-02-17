@@ -31,12 +31,13 @@ from invenio_records_rest import InvenioRecordsREST
 from invenio_records_rest.utils import PIDConverter
 from invenio_records_rest.views import create_blueprint_from_app
 from invenio_search import InvenioSearch
-from nr_nresults.ext import NRNresults
 from oarepo_mapping_includes.ext import OARepoMappingIncludesExt
+from oarepo_multilingual.ext import OARepoMultilingualExt
 from oarepo_records_draft.ext import RecordsDraft
 from oarepo_references import OARepoReferences
 from oarepo_taxonomies.cli import init_db
 from oarepo_taxonomies.ext import OarepoTaxonomies
+from oarepo_validate.ext import OARepoValidate
 from sqlalchemy_utils import database_exists, create_database, drop_database
 
 from nr_all.ext import NRAll
@@ -78,23 +79,20 @@ def app():
     print(os.environ.get("INVENIO_INSTANCE_PATH"))
 
     InvenioDB(app)
-    OarepoTaxonomies(app)
-    OARepoReferences(app)
     InvenioAccounts(app)
     InvenioAccess(app)
     Principal(app)
     InvenioJSONSchemas(app)
     InvenioSearch(app)
     InvenioIndexer(app)
-    OARepoMappingIncludesExt(app)
     InvenioRecords(app)
     InvenioRecordsREST(app)
-    InvenioCelery(app)
-    NRAll(app)
     InvenioPIDStore(app)
-    # Invenio Records Draft initialization
-    RecordsDraft(app)
     app.url_map.converters['pid'] = PIDConverter
+    OarepoTaxonomies(app)
+    OARepoValidate(app)
+    RecordsDraft(app)
+    NRAll(app)
 
     # Celery
     print(app.config["CELERY_BROKER_URL"])
@@ -231,11 +229,6 @@ def taxonomy_tree(app, db, taxonomy):
             "cs": "otevřený přístup",
             "en": "open access"
         },
-        "relatedURI": {
-            "coar": "http://purl.org/coar/access_right/c_abf2",
-            "vocabs": "https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public",
-            "eprint": "http://purl.org/eprint/accessRights/OpenAccess"
-        }
     })
 
     # resource type
@@ -481,12 +474,6 @@ def base_json_dereferenced():
             'is_ancestor': False,
             'links': {
                 'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/c-abf2'
-            },
-            'relatedURI': {
-                'coar': 'http://purl.org/coar/access_right/c_abf2',
-                'eprint': 'http://purl.org/eprint/accessRights/OpenAccess',
-                'vocabs':
-                    'https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public'
             },
             'title': {'cs': 'otevřený přístup', 'en': 'open access'}
         }],

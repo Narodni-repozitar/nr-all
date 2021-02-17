@@ -7,7 +7,7 @@ from nr_theses.record import PublishedThesisRecord
 from nr_all.fetchers import nr_all_id_fetcher
 
 
-def test_nr_nresults_id_fetcher(app, db, base_json, taxonomy_tree, nresult_data, theses_data,
+def test_nr_all_id_fetcher(app, db, base_json, taxonomy_tree, nresult_data, theses_data,
                                 events_data):
     id_field = "control_number"
     nresult_data["control_number"] = "1"
