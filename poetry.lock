@@ -186,7 +186,7 @@ description = "A simple, correct PEP517 package builder"
 name = "build"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
-version = "0.2.1"
+version = "0.3.1.post1"
 
 [package.dependencies]
 packaging = "*"
@@ -194,7 +194,7 @@ pep517 = ">=0.9"
 toml = "*"
 
 [package.extras]
-docs = ["furo (>=2020.11.19b18)", "sphinx (>=3.0,<4.0)", "sphinx-autodoc-typehints (>=1.10)", "sphinxcontrib-autoprogram (>=0.1)"]
+docs = ["furo (>=2020.11.19b18)", "sphinx (>=3.0,<4.0)", "sphinx-argparse-cli (>=1.5)", "sphinx-autodoc-typehints (>=1.10)"]
 test = ["filelock (>=3)", "pytest (>=4)", "pytest-cov (>=2)", "pytest-mock (>=2)", "pytest-xdist (>=1.34)"]
 typing = ["mypy (0.800)", "typing-extensions (>=3.7.4.3)"]
 virtualenv = ["virtualenv (>=20.0.35)"]
@@ -409,7 +409,7 @@ description = "a toolset to deeply merge python dictionaries."
 name = "deepmerge"
 optional = false
 python-versions = "*"
-version = "0.1.1"
+version = "0.2.1"
 
 [[package]]
 category = "dev"
@@ -951,7 +951,10 @@ description = "Flatten JSON objects"
 name = "flatten-json"
 optional = false
 python-versions = "*"
-version = "0.1.7"
+version = "0.1.13"
+
+[package.dependencies]
+six = "*"
 
 [[package]]
 category = "dev"
@@ -1810,14 +1813,6 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "1.1.0"
 
 [[package]]
-category = "main"
-description = "Julian dates from proleptic Gregorian and Julian calendars."
-name = "jdcal"
-optional = false
-python-versions = "*"
-version = "1.4.1"
-
-[[package]]
 category = "dev"
 description = "An autocompletion tool for Python that can be used for text editors."
 name = "jedi"
@@ -2498,7 +2493,7 @@ description = "Multilingual support for OARepo"
 name = "oarepo-multilingual"
 optional = false
 python-versions = "*"
-version = "2.4.2"
+version = "2.4.3"
 
 [package.dependencies]
 flask = "*"
@@ -2514,7 +2509,7 @@ description = "Handling Draft and Production invenio records in one package"
 name = "oarepo-records-draft"
 optional = false
 python-versions = "*"
-version = "5.5.3"
+version = "5.5.4"
 
 [package.dependencies]
 deepmerge = "*"
@@ -2563,6 +2558,18 @@ tests = ["pytest", "pytest-cov", "oarepo (3.3.26)"]
 
 [[package]]
 category = "main"
+description = "API for javascript user interface"
+name = "oarepo-ui"
+optional = false
+python-versions = "*"
+version = "2.0.1"
+
+[package.extras]
+tests = ["invenio-i18n", "oarepo", "oarepo (>=3.3.0,<3.4.0)"]
+tests-es7 = ["invenio-i18n", "oarepo", "oarepo (>=3.3.0,<3.4.0)"]
+
+[[package]]
+category = "main"
 description = "OArepo Validate library for record metadata validation"
 name = "oarepo-validate"
 optional = false
@@ -2582,11 +2589,10 @@ description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
 name = "openpyxl"
 optional = false
 python-versions = ">=3.6,"
-version = "3.0.6"
+version = "3.0.7"
 
 [package.dependencies]
 et-xmlfile = "*"
-jdcal = "*"
 
 [[package]]
 category = "main"
@@ -3374,7 +3380,7 @@ locale = ["Babel (>=1.3)"]
 tests = []
 
 [metadata]
-content-hash = "e4f4f8cafdd2306cbdde36af630f9175dd1090c91b53bdc147222e2c1e702c49"
+content-hash = "39e6c72dc4622be8d18ed625aa6761773775730ba63f943a46c10d440451f848"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -3445,8 +3451,8 @@ boltons = [
     {file = "boltons-20.2.1.tar.gz", hash = "sha256:dd362291a460cc1e0c2e91cc6a60da3036ced77099b623112e8f833e6734bdc5"},
 ]
 build = [
-    {file = "build-0.2.1-py2.py3-none-any.whl", hash = "sha256:f4a35cd9a7834ef54bdf2159a25ca42979bdf397f7c52b98884c51127a03a1b8"},
-    {file = "build-0.2.1.tar.gz", hash = "sha256:be64a48b158cf14ba607977fe394f838879ec8b6c104fa5fa2e2dd666ed99ca8"},
+    {file = "build-0.3.1.post1-py2.py3-none-any.whl", hash = "sha256:88bc8ff6cb948247bebd5b3bf6b8b71d10fd93bce848f9d2fd9b28cbdd40ae8b"},
+    {file = "build-0.3.1.post1.tar.gz", hash = "sha256:85123bf327404e68142b1eb2a8298b052e984ad5b12738549688371e6337c73a"},
 ]
 cachelib = [
     {file = "cachelib-0.1.1-py3-none-any.whl", hash = "sha256:7df6e05b8dfccdeb869e171575580e5606cf1e82a166633b3cb406bc4f113fd0"},
@@ -3608,8 +3614,8 @@ decorator = [
     {file = "decorator-4.4.2.tar.gz", hash = "sha256:e3a62f0520172440ca0dcc823749319382e377f37f140a0b99ef45fecb84bfe7"},
 ]
 deepmerge = [
-    {file = "deepmerge-0.1.1-py2.py3-none-any.whl", hash = "sha256:190e133a6657303db37f9bb302aa853d8d2b15a0e055d41b99a362598e79206a"},
-    {file = "deepmerge-0.1.1.tar.gz", hash = "sha256:fa1d44269786bcc12d30a7471b0b39478aa37a43703b134d7f12649792f92c1f"},
+    {file = "deepmerge-0.2.1-py2.py3-none-any.whl", hash = "sha256:8270901f85fbe249686236cb18bf4bccc69775da2c2e1fa35de3714d5d9d01b3"},
+    {file = "deepmerge-0.2.1.tar.gz", hash = "sha256:5fbd777507dd86c767048bddb2c50adf7da30f7688fe3f3f4e6ede6226dd4b20"},
 ]
 defusedxml = [
     {file = "defusedxml-0.6.0-py2.py3-none-any.whl", hash = "sha256:6687150770438374ab581bb7a1b327a847dd9c5749e396102de3fad4e8a3ef93"},
@@ -3756,8 +3762,7 @@ flask-wtf = [
     {file = "Flask_WTF-0.14.3-py2.py3-none-any.whl", hash = "sha256:57b3faf6fe5d6168bda0c36b0df1d05770f8e205e18332d0376ddb954d17aef2"},
 ]
 flatten-json = [
-    {file = "flatten_json-0.1.7-py3-none-any.whl", hash = "sha256:cdb1a0802f0268f892294f51014097912ba5a6fea99996573a7e3f0cc43cfd26"},
-    {file = "flatten_json-0.1.7.tar.gz", hash = "sha256:06341ba64baf2fd9b960b4cacf3d3bab38e1e09a855d9902e79cfd2fe66fa29c"},
+    {file = "flatten_json-0.1.13.tar.gz", hash = "sha256:ee352333e8293e957ccb1b4597a111fc4f6da88ab74b8cb3f8f51eed1e12f500"},
 ]
 fs = [
     {file = "fs-0.5.4.tar.gz", hash = "sha256:ba2cca8773435a7c86059d57cb4b8ea30fda40f8610941f7822d1ce3ffd36197"},
@@ -3921,10 +3926,6 @@ isort = [
 itsdangerous = [
     {file = "itsdangerous-1.1.0-py2.py3-none-any.whl", hash = "sha256:b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"},
     {file = "itsdangerous-1.1.0.tar.gz", hash = "sha256:321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19"},
-]
-jdcal = [
-    {file = "jdcal-1.4.1-py2.py3-none-any.whl", hash = "sha256:1abf1305fce18b4e8aa248cf8fe0c56ce2032392bc64bbd61b5dff2a19ec8bba"},
-    {file = "jdcal-1.4.1.tar.gz", hash = "sha256:472872e096eb8df219c23f2689fc336668bdb43d194094b5cc1707e1640acfc8"},
 ]
 jedi = [
     {file = "jedi-0.18.0-py2.py3-none-any.whl", hash = "sha256:18456d83f65f400ab0c2d3319e48520420ef43b23a086fdc05dff34132f0fb93"},
@@ -4138,12 +4139,12 @@ oarepo-mapping-includes = [
     {file = "oarepo_mapping_includes-1.2.0-py3-none-any.whl", hash = "sha256:05fd0f561e63db1ada9619e84752ebebe6e0e8cfe9b16362e349045c4d6aebc8"},
 ]
 oarepo-multilingual = [
-    {file = "oarepo_multilingual-2.4.2-py3-none-any.whl", hash = "sha256:025470f6009a4b99a9a8eef20de368b7296b9ff05cf5d59155760d882173c83e"},
-    {file = "oarepo_multilingual-2.4.2.tar.gz", hash = "sha256:fc441061c4aa01a1df3eba8973a2880dbbf7ee3ae4eb77c2f825e06d708cfb9c"},
+    {file = "oarepo_multilingual-2.4.3-py3-none-any.whl", hash = "sha256:723dc9175caa53a0af2f8ab6811622ae89eab3372cd214f286493976708488d8"},
+    {file = "oarepo_multilingual-2.4.3.tar.gz", hash = "sha256:4df32e318e89ab0e4835dc6e7de9f5b215f15cc13b225c4402a12254d1aa2137"},
 ]
 oarepo-records-draft = [
-    {file = "oarepo-records-draft-5.5.3.tar.gz", hash = "sha256:69061e62c66cfdae361200fe7e2eaadb10957dbf3601ef845e736f72b7f5400f"},
-    {file = "oarepo_records_draft-5.5.3-py3-none-any.whl", hash = "sha256:ff2df5e597a6335f9f5eac0780304508af85c1bb8ca77cc97343cfd89e445c63"},
+    {file = "oarepo-records-draft-5.5.4.tar.gz", hash = "sha256:d55a5723ae15d69c5979705f8d5e562544c9f527f7761fb6ad1606da29c829c8"},
+    {file = "oarepo_records_draft-5.5.4-py3-none-any.whl", hash = "sha256:d859079e6132d87d37b4ae4d408b4ff50a3dad8b11a1861f583d02a022488a7f"},
 ]
 oarepo-references = [
     {file = "oarepo-references-1.11.2.tar.gz", hash = "sha256:b17ce504b82087d026343494b3718c2a97e6f74d1273c044df3dcdaaeacfa7ed"},
@@ -4153,13 +4154,17 @@ oarepo-taxonomies = [
     {file = "oarepo_taxonomies-2.5.4-py2.py3-none-any.whl", hash = "sha256:9275037361afead951ae677caafa3933e885a4a0eebc307f751b5c15277b207f"},
     {file = "oarepo_taxonomies-2.5.4.tar.gz", hash = "sha256:e3cc56a55878d64558c14aded0775bccbf91d45f8a0e61e53b60bdcfcf0c6bfc"},
 ]
+oarepo-ui = [
+    {file = "oarepo_ui-2.0.1-py3-none-any.whl", hash = "sha256:33db6fed3804a545984584c1f8428f93dc77e20ed7c5a564166b5343f36b63cc"},
+    {file = "oarepo_ui-2.0.1.tar.gz", hash = "sha256:b369fd3c59b092ac990c13dc8628677817424c1d6f5650a87fd8e18d78f9c3d9"},
+]
 oarepo-validate = [
     {file = "oarepo-validate-1.5.2.tar.gz", hash = "sha256:d928aa102cef1c9d2eff118b72fcde263aacab61c3626f06bc36d9da49bf5186"},
     {file = "oarepo_validate-1.5.2-py2.py3-none-any.whl", hash = "sha256:8503e83bf6c0b88ff08a41d6c22a1acb3b7e8ed2d64817e4e0ae587e86390113"},
 ]
 openpyxl = [
-    {file = "openpyxl-3.0.6-py2.py3-none-any.whl", hash = "sha256:1a4b3869c2500b5c713e8e28341cdada49ecfcff1b10cd9006945f5bcefc090d"},
-    {file = "openpyxl-3.0.6.tar.gz", hash = "sha256:b229112b46e158b910a5d1b270b212c42773d39cab24e8db527f775b82afc041"},
+    {file = "openpyxl-3.0.7-py2.py3-none-any.whl", hash = "sha256:46af4eaf201a89b610fcca177eed957635f88770a5462fb6aae4a2a52b0ff516"},
+    {file = "openpyxl-3.0.7.tar.gz", hash = "sha256:6456a3b472e1ef0facb1129f3c6ef00713cebf62e736cd7a75bcc3247432f251"},
 ]
 packaging = [
     {file = "packaging-20.8-py2.py3-none-any.whl", hash = "sha256:24e0da08660a87484d1602c30bb4902d74816b6985b93de36926f5bc95741858"},
