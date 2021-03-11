@@ -37,3 +37,6 @@ nr_all = 'nr_all.minters:nr_all_id_minter'
 
 [tool.poetry.plugins."invenio_pidstore.fetchers"]
 nr_all = 'nr_all.fetchers:nr_all_id_fetcher'
+
+[tool.poetry.plugins."invenio_i18n.translations"]
+nr_all = "nr_all"
