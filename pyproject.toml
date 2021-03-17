@@ -10,9 +10,10 @@ nr-common = { git = "https://github.com/Narodni-repozitar/nr-common.git", branch
 nr-theses = { git = "https://github.com/Narodni-repozitar/nr-theses.git", branch = "master" }
 nr-Nresults = { git = "https://github.com/Narodni-repozitar/nr-Nresults.git", branch = "master" }
 nr-events = { git = "https://github.com/Narodni-repozitar/nr-events.git", branch = "master" }
-oarepo-ui = "^2.0.1"
+
 
 [tool.poetry.dev-dependencies]
+oarepo-ui = "^2.0.1"
 oarepo = "^3.3"
 pytest = "^5.0.0"
 pytest-cov = "^2.10.1"
