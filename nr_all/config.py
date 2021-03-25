@@ -21,7 +21,7 @@ RECORDS_REST_ENDPOINTS = {
         record_class=AllNrRecord,
         search_index=all_index_name,
         search_serializers={
-            'application/json': 'oarepo_validate:json_search',
+            'application/json': 'nr_all.serializers:json_search',
         },
         list_route='/all/',
         default_media_type='application/json',
