@@ -13,6 +13,7 @@ nr-events = { git = "https://github.com/Narodni-repozitar/nr-events.git", branch
 
 
 [tool.poetry.dev-dependencies]
+oarepo-multilingual = ">=2.4.3"
 oarepo-ui = "^2.0.1"
 oarepo = "^3.3"
 pytest = "^5.0.0"
