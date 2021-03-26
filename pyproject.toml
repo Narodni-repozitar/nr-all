@@ -13,11 +13,22 @@ nr-events = { git = "https://github.com/Narodni-repozitar/nr-events.git", branch
 
 
 [tool.poetry.dev-dependencies]
-oarepo-multilingual = ">=2.4.3"
-oarepo-ui = "^2.0.1"
+# TODO: change to pypi packages
+#oarepo-ui = "^2.0.1"
+oarepo-ui = { git = "https://github.com/oarepo/oarepo-ui.git", branch = "devel" }
+# TODO: CHANGE UP ↑
 oarepo = "^3.3"
 pytest = "^5.0.0"
 pytest-cov = "^2.10.1"
+oarepo-micro-api = "^3.3.53"
+oarepo-validate = "^1.0.0"
+oarepo-references = "^1.11.1"
+oarepo-mapping-includes = "<=1.2.0"
+oarepo-records-draft = "^5.5.0"
+oarepo-iiif = "^1.1.4"
+oarepo-taxonomies = {version = "^3.0.0-alpha.1", allow-prereleases = true}
+oarepo-invenio-model = "^2.1.2"
+oarepo-multilingual = ">=2.4.3"
 
 
 [tool.poetry.plugins."invenio_config.module"]
