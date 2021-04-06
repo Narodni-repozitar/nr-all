@@ -19,7 +19,6 @@ from invenio_access import InvenioAccess
 from invenio_accounts import InvenioAccounts
 from invenio_accounts.models import User
 from invenio_base.signals import app_loaded
-from invenio_celery import InvenioCelery
 from invenio_db import InvenioDB
 from invenio_db import db as db_
 from invenio_indexer import InvenioIndexer
@@ -31,10 +30,8 @@ from invenio_records_rest import InvenioRecordsREST
 from invenio_records_rest.utils import PIDConverter
 from invenio_records_rest.views import create_blueprint_from_app
 from invenio_search import InvenioSearch
-from oarepo_mapping_includes.ext import OARepoMappingIncludesExt
-from oarepo_multilingual.ext import OARepoMultilingualExt
+from oarepo_communities.ext import OARepoCommunities
 from oarepo_records_draft.ext import RecordsDraft
-from oarepo_references import OARepoReferences
 from oarepo_taxonomies.cli import init_db
 from oarepo_taxonomies.ext import OarepoTaxonomies
 from oarepo_validate.ext import OARepoValidate
@@ -72,7 +69,8 @@ def app():
                     "type": "keyword"
                 }
             }
-        }
+        },
+        OAREPO_COMMUNITIES_ENDPOINTS=[]
     )
 
     app.secret_key = 'changeme'
@@ -92,7 +90,9 @@ def app():
     OarepoTaxonomies(app)
     OARepoValidate(app)
     RecordsDraft(app)
+    OARepoCommunities(app)
     NRAll(app)
+
 
     # Celery
     print(app.config["CELERY_BROKER_URL"])
@@ -417,6 +417,7 @@ def get_pid():
 @pytest.fixture()
 def base_json():
     return {
+        "_primary_community": "nr",
         "accessRights": [{
             "is_ancestor": False,
             "links": {
@@ -470,6 +471,7 @@ def base_json():
 @pytest.fixture()
 def base_json_dereferenced():
     return {
+        "_primary_community": "nr",
         'accessRights': [{
             'is_ancestor': False,
             'links': {
