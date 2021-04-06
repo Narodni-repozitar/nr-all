@@ -6,10 +6,10 @@ authors = ["Daniel Kopecký <Daniel.Kopecky@techlib.cz>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-nr-common = { git = "https://github.com/Narodni-repozitar/nr-common.git", branch = "master" }
-nr-theses = { git = "https://github.com/Narodni-repozitar/nr-theses.git", branch = "master" }
-nr-Nresults = { git = "https://github.com/Narodni-repozitar/nr-Nresults.git", branch = "master" }
-nr-events = { git = "https://github.com/Narodni-repozitar/nr-events.git", branch = "master" }
+nr-common = { git = "https://github.com/Narodni-repozitar/nr-common.git", branch = "devel" }
+nr-theses = { git = "https://github.com/Narodni-repozitar/nr-theses.git", branch = "devel" }
+nr-Nresults = { git = "https://github.com/Narodni-repozitar/nr-Nresults.git", branch = "devel" }
+nr-events = { git = "https://github.com/Narodni-repozitar/nr-events.git", branch = "devel" }
 
 
 [tool.poetry.dev-dependencies]
