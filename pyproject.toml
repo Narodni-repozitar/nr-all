@@ -1,23 +1,22 @@
 [tool.poetry]
-name = "nr-all"
-version = "1.0.0a4"
+name = "techlib-nr-all"
+version = "1.0.0a5"
 description = "Czech National Repository index that store all records from all metadata models"
 authors = ["Daniel Kopecký <Daniel.Kopecky@techlib.cz>"]
+packages = [{include='nr_all'}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-nr-common = { git = "https://github.com/Narodni-repozitar/nr-common.git", branch = "devel" }
-nr-theses = { git = "https://github.com/Narodni-repozitar/nr-theses.git", branch = "devel" }
-nr-Nresults = { git = "https://github.com/Narodni-repozitar/nr-Nresults.git", branch = "devel" }
-nr-events = { git = "https://github.com/Narodni-repozitar/nr-events.git", branch = "devel" }
+techlib-nr-common = {version = "^3.0.0a39", allow-prereleases = true}
+techlib-nr-theses = {version = "^1.0.0a1", allow-prereleases = true}
+techlib-nr-Nresults = {version = "^1.0.0a12", allow-prereleases = true}
+techlib-nr-events = {version = "^1.0.0a13", allow-prereleases = true}
 
 
 [tool.poetry.dev-dependencies]
 # TODO: change to pypi packages
-#oarepo-ui = "^2.0.1"
-oarepo-ui = { git = "https://github.com/oarepo/oarepo-ui.git", branch = "devel" }
-# TODO: CHANGE UP ↑
-oarepo = "^3.3"
+oarepo-ui = "^2.3.0"
+oarepo = "^3.3.59"
 pytest = "^5.0.0"
 pytest-cov = "^2.10.1"
 oarepo-micro-api = "^3.3.53"
@@ -29,6 +28,8 @@ oarepo-iiif = "^1.1.4"
 oarepo-taxonomies = {version = "^3.0.0-alpha.1", allow-prereleases = true}
 oarepo-invenio-model = "^2.1.2"
 oarepo-multilingual = ">=2.4.3"
+oarepo-communities = "^1.4.2"
+
 
 
 [tool.poetry.plugins."invenio_config.module"]
