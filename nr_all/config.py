@@ -1,10 +1,10 @@
 from invenio_records_rest.utils import deny_all, check_elasticsearch
-from invenio_search import RecordsSearch
 from nr_common.config import FACETS, CURATOR_FACETS, FILTERS, CURATOR_FILTERS
 from oarepo_records_draft import DRAFT_IMPORTANT_FACETS, DRAFT_IMPORTANT_FILTERS
 from oarepo_ui.facets import translate_facets
 
 from nr_all.record import AllNrRecord, all_index_name
+from nr_all.search import AllRecordsSearch
 
 RECORDS_REST_ENDPOINTS = {
     # readonly url for both endpoints, does not have item route
@@ -14,7 +14,7 @@ RECORDS_REST_ENDPOINTS = {
         pid_minter='nr_all',
         pid_fetcher='nr_all',
         default_endpoint_prefix=True,
-        search_class=RecordsSearch,
+        search_class=AllRecordsSearch,
         record_class=AllNrRecord,
         search_index=all_index_name,
         search_serializers={
