@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "techlib-nr-all"
-version = "1.0.0a6"
+version = "1.0.0a7"
 description = "Czech National Repository index that store all records from all metadata models"
 authors = ["Daniel Kopecký <Daniel.Kopecky@techlib.cz>"]
 packages = [{include='nr_all'}]
@@ -8,10 +8,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-techlib-nr-common = {version = "^3.0.0a39", allow-prereleases = true}
-techlib-nr-theses = {version = "^1.0.0a1", allow-prereleases = true}
-techlib-nr-Nresults = {version = "^1.0.0a12", allow-prereleases = true}
-techlib-nr-events = {version = "^1.0.0a13", allow-prereleases = true}
+techlib-nr-common = {version = "^3.0.0a44", allow-prereleases = true}
+techlib-nr-theses = {version = "^1.0.0a3", allow-prereleases = true}
+techlib-nr-Nresults = {version = "^1.0.0a13", allow-prereleases = true}
+techlib-nr-events = {version = "^1.0.0a14", allow-prereleases = true}
+techlib-nr-generic = {version = "^1.0.0a2", allow-prereleases = true}
 
 
 [tool.poetry.dev-dependencies]
@@ -23,13 +24,13 @@ pytest-cov = "^2.10.1"
 oarepo-micro-api = "^3.3.53"
 oarepo-validate = "^1.0.0"
 oarepo-references = "^1.11.1"
-oarepo-mapping-includes = "<=1.2.0"
+oarepo-mapping-includes = "^1.4.0"
 oarepo-records-draft = "^5.5.0"
 oarepo-iiif = "^1.1.4"
 oarepo-taxonomies = {version = "^3.0.0-alpha.1", allow-prereleases = true}
 oarepo-invenio-model = "^2.1.2"
 oarepo-multilingual = ">=2.4.3"
-oarepo-communities = "^1.4.2"
+oarepo-communities = "^2.0.0"
 
 
 

@@ -23,11 +23,11 @@ def test_nr_all_id_fetcher(app, db, base_json, taxonomy_tree, nresult_data, thes
     fetched_theses = nr_all_id_fetcher(uuid_theses, theses_data)
     fetched_events = nr_all_id_fetcher(uuid_theses, events_data)
     assert fetched_nresult.pid_type == "nrnrs"
-    assert fetched_nresult.pid_value == nresult_data[id_field]
+    assert str(fetched_nresult.pid_value) == str(nresult_data[id_field])
     assert fetched_theses.pid_type == "nrthe"
-    assert fetched_theses.pid_value == theses_data[id_field]
+    assert str(fetched_theses.pid_value) == str(theses_data[id_field])
     assert fetched_events.pid_type == "nrevt"
-    assert fetched_events.pid_value == events_data[id_field]
+    assert str(fetched_events.pid_value) == str(events_data[id_field])
 
 
 def test_entry_points(app):

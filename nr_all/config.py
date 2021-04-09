@@ -1,5 +1,5 @@
 from invenio_records_rest.utils import deny_all, check_elasticsearch
-from nr_common.config import FACETS, CURATOR_FACETS, FILTERS, CURATOR_FILTERS
+from nr_generic.config import FACETS, CURATOR_FACETS, FILTERS, CURATOR_FILTERS
 from oarepo_records_draft import DRAFT_IMPORTANT_FACETS, DRAFT_IMPORTANT_FILTERS
 from oarepo_ui.facets import translate_facets
 

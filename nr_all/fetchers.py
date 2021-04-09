@@ -23,7 +23,7 @@
 # SOFTWARE.
 #
 from invenio_pidstore.fetchers import FetchedPID
-from nr_common.fetchers import nr_id_fetcher
+from nr_generic.fetchers import nr_id_generic_fetcher
 from nr_events.fetchers import nr_events_id_fetcher
 from nr_theses.fetchers import nr_theses_id_fetcher
 from nr_nresults.fetchers import nr_nresults_id_fetcher
@@ -44,7 +44,7 @@ def nr_all_id_fetcher(record_uuid, data):
     elif "N_type" in data:
         fetched_pid = nr_nresults_id_fetcher(record_uuid, data)
     else:
-        fetched_pid = nr_id_fetcher(record_uuid, data)
+        fetched_pid = nr_id_generic_fetcher(record_uuid, data)
     if 'oarepo:validity' in data:
         return FetchedPID(
             provider=fetched_pid.provider,
