@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "techlib-nr-all"
-version = "1.0.0a7"
+version = "1.0.0a8"
 description = "Czech National Repository index that store all records from all metadata models"
 authors = ["Daniel Kopecký <Daniel.Kopecky@techlib.cz>"]
 packages = [{include='nr_all'}]
@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-techlib-nr-common = {version = "^3.0.0a44", allow-prereleases = true}
+techlib-nr-common = {version = "^3.0.0a45", allow-prereleases = true}
 techlib-nr-theses = {version = "^1.0.0a3", allow-prereleases = true}
 techlib-nr-Nresults = {version = "^1.0.0a13", allow-prereleases = true}
 techlib-nr-events = {version = "^1.0.0a14", allow-prereleases = true}
@@ -16,7 +16,6 @@ techlib-nr-generic = {version = "^1.0.0a2", allow-prereleases = true}
 
 
 [tool.poetry.dev-dependencies]
-# TODO: change to pypi packages
 oarepo-ui = "^2.3.0"
 oarepo = "^3.3.59"
 pytest = "^5.0.0"
