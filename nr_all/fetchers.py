@@ -22,11 +22,25 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
+import functools
+
 from invenio_pidstore.fetchers import FetchedPID
+from nr_events.record import EventBaseRecord
 from nr_generic.fetchers import nr_id_generic_fetcher
 from nr_events.fetchers import nr_events_id_fetcher
+from nr_generic.record import CommonBaseRecord
+from nr_nresults.record import NResultBaseRecord
 from nr_theses.fetchers import nr_theses_id_fetcher
 from nr_nresults.fetchers import nr_nresults_id_fetcher
+from nr_theses.record import ThesisBaseRecord
+
+
+@functools.lru_cache(maxsize=1)
+def prepare_schemas():
+    CommonBaseRecord._prepare_schemas()
+    EventBaseRecord._prepare_schemas()
+    ThesisBaseRecord._prepare_schemas()
+    NResultBaseRecord._prepare_schemas()
 
 
 def nr_all_id_fetcher(record_uuid, data):
@@ -37,15 +51,25 @@ def nr_all_id_fetcher(record_uuid, data):
         :returns: A :class:`invenio_pidstore.fetchers.FetchedPID` that contains
             data['did'] as pid_value.
         """
-    if "defended" in data:
-        fetched_pid = nr_theses_id_fetcher(record_uuid, data)
-    elif "events" in data:
+    if '$schema' not in data:
+        raise ValueError('Return _schema in search results')
+
+    schema = data['$schema']
+
+    prepare_schemas()
+
+    if schema == CommonBaseRecord.PREFERRED_SCHEMA:
+        fetched_pid = nr_id_generic_fetcher(record_uuid, data)
+    elif schema == EventBaseRecord.PREFERRED_SCHEMA:
         fetched_pid = nr_events_id_fetcher(record_uuid, data)
-    elif "N_type" in data:
+    elif schema == ThesisBaseRecord.PREFERRED_SCHEMA:
+        fetched_pid = nr_theses_id_fetcher(record_uuid, data)
+    elif schema == NResultBaseRecord.PREFERRED_SCHEMA:
         fetched_pid = nr_nresults_id_fetcher(record_uuid, data)
     else:
-        fetched_pid = nr_id_generic_fetcher(record_uuid, data)
-    if 'oarepo:validity' in data:
+        raise ValueError(f'Unknown conversion of schema "{schema}" to pid type')
+
+    if data.get('oarepo:draft'):
         return FetchedPID(
             provider=fetched_pid.provider,
             pid_type="d" + fetched_pid.pid_type,
