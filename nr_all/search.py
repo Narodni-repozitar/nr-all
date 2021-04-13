@@ -1,5 +1,3 @@
-from boltons.typeutils import classproperty
-from elasticsearch_dsl import Q
 from elasticsearch_dsl.query import Term, Bool
 from nr_common.search import NRRecordsSearch
 
@@ -10,7 +8,8 @@ class AllRecordsSearch(NRRecordsSearch):
         'dateIssued', 'creator', 'resourceType', 'contributor', 'keywords',
         'subject', 'abstract', 'state',
         '_administration.primaryCommunity',
-        '_administration.communities'
+        '_administration.communities',
+        '$schema'
     ]
 
 
