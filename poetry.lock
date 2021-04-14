@@ -175,20 +175,20 @@ python-versions = "*"
 
 [[package]]
 name = "boto3"
-version = "1.17.48"
+version = "1.17.49"
 description = "The AWS SDK for Python"
 category = "main"
 optional = false
 python-versions = ">= 2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 
 [package.dependencies]
-botocore = ">=1.20.48,<1.21.0"
+botocore = ">=1.20.49,<1.21.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.3.0,<0.4.0"
 
 [[package]]
 name = "botocore"
-version = "1.20.48"
+version = "1.20.49"
 description = "Low-level, data-driven core of boto 3."
 category = "main"
 optional = false
@@ -1071,7 +1071,7 @@ elasticsearch6 = ["invenio-search[elasticsearch6] (>=1.3.1,<1.4.0)"]
 elasticsearch7 = ["invenio-search[elasticsearch7] (>=1.3.1,<1.4.0)"]
 files = ["invenio-files-rest (>=1.2.0,<1.3.0)", "invenio-iiif (>=1.1.0,<1.2.0)", "invenio-previewer (>=1.2.1,<1.3.0)", "invenio-records-files (>=1.2.1,<1.3.0)"]
 metadata = ["invenio-indexer (>=1.1.1,<1.2.0)", "invenio-jsonschemas (>=1.1.0,<1.2.0)", "invenio-oaiserver (>=1.2.0,<1.3.0)", "invenio-pidstore (>=1.2.0,<1.3.0)", "invenio-records-rest (>=1.7.1,<1.8.0)", "invenio-records-ui (>=1.1.0,<1.2.0)", "invenio-records (>=1.3.1,<1.4.0)", "invenio-search-ui (>=1.2.0,<1.3.0)"]
-mysql = ["invenio-db[versioning,mysql] (>=1.0.5,<1.1.0)"]
+mysql = ["invenio-db[mysql,versioning] (>=1.0.5,<1.1.0)"]
 postgresql = ["invenio-db[versioning,postgresql] (>=1.0.5,<1.1.0)"]
 sqlite = ["invenio-db[versioning] (>=1.0.5,<1.1.0)"]
 tests = ["check-manifest (>=0.35)", "coverage (>=4.5.3)", "isort (>=4.3)", "pydocstyle (>=3.0.0)", "pytest-cov (>=2.7.1)", "pytest-invenio (>=1.3.1,<1.4.0)", "pytest-pep8 (>=1.0.6)", "pytest (>=4.6.4,<5.0.0)"]
@@ -1093,7 +1093,7 @@ invenio-i18n = ">=1.2.0"
 [package.extras]
 all = ["Sphinx (>=3)", "cachelib (>=0.1)", "pytest-invenio (>=1.4.1)", "redis (>=2.10.5)"]
 docs = ["Sphinx (>=3)"]
-mysql = ["invenio-db[versioning,mysql] (>=1.0.8)"]
+mysql = ["invenio-db[mysql,versioning] (>=1.0.8)"]
 postgresql = ["invenio-db[versioning,postgresql] (>=1.0.8)"]
 sqlite = ["invenio-db[versioning,sqlite] (>=1.0.8)"]
 tests = ["cachelib (>=0.1)", "pytest-invenio (>=1.4.1)", "redis (>=2.10.5)"]
@@ -1132,7 +1132,7 @@ ua-parser = ">=0.7.3"
 admin = ["invenio-admin (>=1.2.1)"]
 all = ["invenio-admin (>=1.2.1)", "Sphinx (>=3)", "pytest-invenio (>=1.4.0)"]
 docs = ["Sphinx (>=3)"]
-mysql = ["invenio-db[versioning,mysql] (>=1.0.8)"]
+mysql = ["invenio-db[mysql,versioning] (>=1.0.8)"]
 postgresql = ["invenio-db[versioning,postgresql] (>=1.0.8)"]
 sqlite = ["invenio-db[versioning] (>=1.0.8)"]
 tests = ["pytest-invenio (>=1.4.0)"]
@@ -1524,7 +1524,7 @@ WTForms-Alchemy = ">=0.15.0"
 admin = ["invenio-admin (>=1.2.1)"]
 all = ["invenio-admin (>=1.2.1)", "Sphinx (>=2,<3)", "redis (>=2.10.5)", "pytest-invenio (>=1.4.0)"]
 docs = ["Sphinx (>=2,<3)"]
-mysql = ["invenio-db[versioning,mysql] (>=1.0.8)"]
+mysql = ["invenio-db[mysql,versioning] (>=1.0.8)"]
 postgresql = ["invenio-db[versioning,postgresql] (>=1.0.8)"]
 redis = ["redis (>=2.10.5)"]
 sqlite = ["invenio-db[versioning] (>=1.0.8)"]
@@ -1634,7 +1634,7 @@ werkzeug = ">=0.14.1"
 admin = ["Flask-Admin (>=1.3.0)"]
 all = ["Sphinx (>=1.7.2)", "Flask-Admin (>=1.3.0)", "check-manifest (>=0.25)", "coverage (>=4.5.3)", "Flask-Menu (>=0.5.0)", "invenio-admin (>=1.0.0)", "isort (>=4.3.0)", "mock (>=1.3.0)", "pydocstyle (>=3.0.0)", "pytest-cov (>=2.7.1)", "pytest-pep8 (>=1.0.6)", "pytest (>=4.6.4,<5.0.0)"]
 docs = ["Sphinx (>=1.7.2)"]
-mysql = ["invenio-db[versioning,mysql] (>=1.0.0)"]
+mysql = ["invenio-db[mysql,versioning] (>=1.0.0)"]
 postgresql = ["invenio-db[versioning,postgresql] (>=1.0.0)"]
 sqlite = ["invenio-db[versioning] (>=1.0.0)"]
 tests = ["check-manifest (>=0.25)", "coverage (>=4.5.3)", "Flask-Menu (>=0.5.0)", "invenio-admin (>=1.0.0)", "isort (>=4.3.0)", "mock (>=1.3.0)", "pydocstyle (>=3.0.0)", "pytest-cov (>=2.7.1)", "pytest-pep8 (>=1.0.6)", "pytest (>=4.6.4,<5.0.0)"]
@@ -1656,7 +1656,7 @@ invenio-records-rest = ">=1.6.3"
 [package.extras]
 all = ["Sphinx (>=1.5.1)", "check-manifest (>=0.25)", "coverage (>=4.0)", "invenio-indexer (>=1.1.0)", "invenio-search[elasticsearch6] (>=1.2.0)", "isort (>=4.3.4)", "mock (>=1.3.0)", "pydocstyle (>=1.0.0)", "pytest-cov (>=1.8.0)", "pytest-pep8 (>=1.0.6)", "pytest (>=3.7.0)"]
 docs = ["Sphinx (>=1.5.1)"]
-mysql = ["invenio-db[versioning,mysql] (>=1.0.0)"]
+mysql = ["invenio-db[mysql,versioning] (>=1.0.0)"]
 postgresql = ["invenio-db[versioning,postgresql] (>=1.0.0)"]
 sqlite = ["invenio-db[versioning] (>=1.0.0)"]
 tests = ["check-manifest (>=0.25)", "coverage (>=4.0)", "invenio-indexer (>=1.1.0)", "invenio-search[elasticsearch6] (>=1.2.0)", "isort (>=4.3.4)", "mock (>=1.3.0)", "pydocstyle (>=1.0.0)", "pytest-cov (>=1.8.0)", "pytest-pep8 (>=1.0.6)", "pytest (>=3.7.0)"]
@@ -1710,9 +1710,9 @@ invenio-pidstore = ">=1.2.0"
 invenio-records = ">=1.0.0"
 
 [package.extras]
-all = ["Sphinx (>=1.5.1)", "check-manifest (>=0.25)", "coverage (>=4.0)", "invenio-access (>=1.0.0)", "invenio-accounts (>=1.2.0)", "invenio-db[versioning,postgresql,mysql] (>=1.0.0)", "isort (>=4.2.2)", "pydocstyle (>=1.0.0)", "pytest-cov (>=1.8.0)", "pytest-pep8 (>=1.0.6)", "pytest (>=2.8.0)"]
+all = ["Sphinx (>=1.5.1)", "check-manifest (>=0.25)", "coverage (>=4.0)", "invenio-access (>=1.0.0)", "invenio-accounts (>=1.2.0)", "invenio-db[mysql,versioning,postgresql] (>=1.0.0)", "isort (>=4.2.2)", "pydocstyle (>=1.0.0)", "pytest-cov (>=1.8.0)", "pytest-pep8 (>=1.0.6)", "pytest (>=2.8.0)"]
 docs = ["Sphinx (>=1.5.1)"]
-tests = ["check-manifest (>=0.25)", "coverage (>=4.0)", "invenio-access (>=1.0.0)", "invenio-accounts (>=1.2.0)", "invenio-db[versioning,postgresql,mysql] (>=1.0.0)", "isort (>=4.2.2)", "pydocstyle (>=1.0.0)", "pytest-cov (>=1.8.0)", "pytest-pep8 (>=1.0.6)", "pytest (>=2.8.0)"]
+tests = ["check-manifest (>=0.25)", "coverage (>=4.0)", "invenio-access (>=1.0.0)", "invenio-accounts (>=1.2.0)", "invenio-db[mysql,versioning,postgresql] (>=1.0.0)", "isort (>=4.2.2)", "pydocstyle (>=1.0.0)", "pytest-cov (>=1.8.0)", "pytest-pep8 (>=1.0.6)", "pytest (>=2.8.0)"]
 
 [[package]]
 name = "invenio-rest"
@@ -1850,7 +1850,7 @@ tests = ["pytest-pep8 (>=1.0.6)", "pytest (>=3.0.4)"]
 
 [[package]]
 name = "isbnlib"
-version = "3.10.6"
+version = "3.10.7"
 description = "Extract, clean, transform, hyphenate and metadata for ISBNs (International Standard Book Number)."
 category = "main"
 optional = false
@@ -2055,7 +2055,7 @@ python-versions = "*"
 name = "luqum"
 version = "0.11.0"
 description = "A Lucene query parser generating ElasticSearch queries and more !"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -2232,7 +2232,7 @@ testing = ["pytest"]
 
 [[package]]
 name = "oarepo"
-version = "3.3.60"
+version = "3.3.61"
 description = "CESNET, UCT Prague and NTK wrapper around Invenio v3."
 category = "main"
 optional = false
@@ -2252,8 +2252,8 @@ base32-lib = "1.0.2"
 billiard = "3.6.4.0"
 bleach = "3.3.0"
 blinker = "1.4"
-boto3 = "1.17.48"
-botocore = "1.20.48"
+boto3 = "1.17.49"
+botocore = "1.20.49"
 cachelib = "0.1.1"
 cchardet = "2.1.7"
 celery = "5.0.5"
@@ -2423,20 +2423,22 @@ wtforms-alchemy = "0.17.0"
 wtforms-components = "0.10.5"
 
 [package.extras]
-tests = ["alembic (==1.5.8)", "amqp (==5.0.6)", "angular-gettext-babel (==0.3)", "aniso8601 (==9.0.1)", "apipkg (==1.5)", "appnope (==0.1.2)", "arrow (==1.0.3)", "atomicwrites (==1.4.0)", "attrs (==20.3.0)", "babel (==2.9.0)", "backcall (==0.2.0)", "base32-lib (==1.0.2)", "billiard (==3.6.4.0)", "bleach (==3.3.0)", "blinker (==1.4)", "boto3 (==1.17.48)", "botocore (==1.20.48)", "build (==0.3.1.post1)", "cachelib (==0.1.1)", "cchardet (==2.1.7)", "celery (==5.0.5)", "certifi (==2020.12.5)", "cffi (==1.14.5)", "chardet (==3.0.4)", "check-manifest (==0.46)", "click (==7.1.2)", "click-default-group (==1.2.2)", "click-didyoumean (==0.0.3)", "click-plugins (==1.1.1)", "click-repl (==0.1.6)", "colorama (==0.4.4)", "coverage (==4.5.4)", "cryptography (==3.4.7)", "decorator (==5.0.6)", "defusedxml (==0.7.1)", "dnspython (==2.1.0)", "docker-services-cli (==0.3.0)", "dojson (==1.4.0)", "elasticsearch (==7.12.0)", "elasticsearch-dsl (==7.3.0)", "email-validator (==1.1.2)", "entrypoints (==0.3)", "execnet (==1.8.0)", "flask (==1.1.2)", "flask-admin (==1.5.7)", "flask-alembic (==2.0.1)", "flask-assets (==2.0)", "flask-babelex (==0.9.4)", "flask-breadcrumbs (==0.5.1)", "flask-caching (==1.10.1)", "flask-celeryext (==0.3.4)", "flask-collect (==1.2.2)", "flask-cors (==3.0.10)", "flask-iiif (==0.6.1)", "flask-kvsession-invenio (==0.6.3)", "flask-limiter (==1.1.0)", "flask-login (==0.4.1)", "flask-mail (==0.9.1)", "flask-menu (==0.7.2)", "flask-oauthlib (==0.9.6)", "flask-principal (==0.4.0)", "flask-restful (==0.3.8)", "flask-security (==3.0.0)", "flask-shell-ipython (==0.4.1)", "flask-sqlalchemy (==2.4.4)", "flask-talisman (==0.5.0)", "flask-webpackext (==1.0.2)", "flask-wtf (==0.14.3)", "fs (==0.5.4)", "ftfy (==4.4.3)", "future (==0.18.2)", "html5lib (==1.1)", "idna (==2.10)", "infinity (==1.5)", "intervals (==0.9.1)", "invenio (==3.3.0)", "invenio-access (==1.4.2)", "invenio-accounts (==1.4.2)", "invenio-admin (==1.2.1)", "invenio-app (==1.2.7)", "invenio-assets (==1.1.5)", "invenio-base (==1.2.3)", "invenio-cache (==1.1.0)", "invenio-celery (==1.2.2)", "invenio-config (==1.0.3)", "invenio-db (==1.0.9)", "invenio-files-rest (==1.2.0)", "invenio-formatter (==1.0.3)", "invenio-i18n (==1.2.0)", "invenio-iiif (==1.1.0)", "invenio-indexer (==1.1.2)", "invenio-jsonschemas (==1.1.2)", "pytz (==2021.1)", "invenio-logging (==1.3.0)", "invenio-mail (==1.0.2)", "invenio-oaiserver (==1.2.0)", "invenio-oauth2server (==1.3.1)", "invenio-oauthclient (==1.4.0)", "invenio-pidstore (==1.2.2)", "invenio-previewer (==1.2.2)", "invenio-records (==1.3.2)", "invenio-records-files (==1.2.1)", "invenio-records-rest (==1.7.2)", "invenio-records-ui (==1.1.0)", "invenio-rest (==1.2.3)", "invenio-search (==1.3.1)", "invenio-search-ui (==1.2.0)", "invenio-theme (==1.1.4)", "ipython (==7.22.0)", "ipython-genutils (==0.2.0)", "isort (==5.8.0)", "itsdangerous (==1.1.0)", "jedi (==0.18.0)", "jinja2 (==2.11.3)", "jmespath (==0.10.0)", "jsmin (==2.2.2)", "jsonpatch (==1.32)", "jsonpointer (==2.1)", "jsonref (==0.2)", "jsonresolver (==0.3.1)", "jsonschema (==3.2.0)", "jupyter-client (==6.1.13)", "jupyter-core (==4.7.1)", "kombu (==5.0.2)", "limits (==1.5.1)", "lxml (==4.6.3)", "mako (==1.1.4)", "markupsafe (==1.1.1)", "marshmallow (==3.11.1)", "maxminddb (==2.0.3)", "maxminddb-geolite2 (==2018.703)", "mistune (==0.8.4)", "more-itertools (==8.7.0)", "msgpack (==1.0.2)", "nbconvert (==5.6.1)", "nbformat (==5.1.3)", "nest-asyncio (==1.5.1)", "node-semver (==0.1.1)", "oauthlib (==2.1.0)", "packaging (==20.9)", "pandocfilters (==1.4.3)", "parso (==0.8.2)", "passlib (==1.7.4)", "pep517 (==0.10.0)", "pep8 (==1.7.1)", "pexpect (==4.8.0)", "pickleshare (==0.7.5)", "pillow (==8.2.0)", "pluggy (==0.13.1)", "prompt-toolkit (==3.0.18)", "psycopg2-binary (==2.8.6)", "ptyprocess (==0.7.0)", "py (==1.10.0)", "pycparser (==2.20)", "pydocstyle (==6.0.0)", "pygments (==2.8.1)", "pyjwt (==2.0.1)", "pynpm (==0.1.2)", "pyparsing (==2.4.7)", "pyrsistent (==0.17.3)", "pytest (==4.6.11)", "pytest-cache (==1.0)", "pytest-cov (==2.10.1)", "pytest-flask (==0.15.1)", "pytest-invenio[docs] (==1.3.4)", "pytest-pep8 (==1.0.6)", "python-dateutil (==2.8.1)", "python-editor (==1.0.4)", "pywebpack (==1.2.0)", "pyzmq (==22.0.3)", "redis (==3.5.3)", "requests (==2.24.0)", "requests-oauthlib (==1.1.0)", "s3-client-lib (==0.1.4)", "s3transfer (==0.3.6)", "selenium (==3.141.0)", "sentry-sdk (==1.0.0)", "simplejson (==3.17.2)", "simplekv (==0.14.1)", "six (==1.15.0)", "snowballstemmer (==2.1.0)", "speaklater (==1.3)", "sqlalchemy (==1.3.24)", "sqlalchemy-continuum (==1.3.11)", "sqlalchemy-utils (==0.35.0)", "testpath (==0.4.4)", "toml (==0.10.2)", "tornado (==5.1.1)", "traitlets (==5.0.5)", "ua-parser (==0.10.0)", "uritools (==3.0.1)", "urllib3 (==1.25.11)", "validators (==0.18.2)", "vine (==5.0.0)", "wand (==0.6.6)", "wcwidth (==0.2.5)", "webargs (==5.5.3)", "webassets (==2.0)", "webencodings (==0.5.1)", "werkzeug (==1.0.1)", "wtforms (==2.3.3)", "wtforms-alchemy (==0.17.0)", "wtforms-components (==0.10.5)"]
+tests = ["alembic (==1.5.8)", "amqp (==5.0.6)", "angular-gettext-babel (==0.3)", "aniso8601 (==9.0.1)", "apipkg (==1.5)", "appnope (==0.1.2)", "arrow (==1.0.3)", "atomicwrites (==1.4.0)", "attrs (==20.3.0)", "babel (==2.9.0)", "backcall (==0.2.0)", "base32-lib (==1.0.2)", "billiard (==3.6.4.0)", "bleach (==3.3.0)", "blinker (==1.4)", "boto3 (==1.17.49)", "botocore (==1.20.49)", "build (==0.3.1.post1)", "cachelib (==0.1.1)", "cchardet (==2.1.7)", "celery (==5.0.5)", "certifi (==2020.12.5)", "cffi (==1.14.5)", "chardet (==3.0.4)", "check-manifest (==0.46)", "click (==7.1.2)", "click-default-group (==1.2.2)", "click-didyoumean (==0.0.3)", "click-plugins (==1.1.1)", "click-repl (==0.1.6)", "colorama (==0.4.4)", "coverage (==4.5.4)", "cryptography (==3.4.7)", "decorator (==5.0.6)", "defusedxml (==0.7.1)", "dnspython (==2.1.0)", "docker-services-cli (==0.3.0)", "dojson (==1.4.0)", "elasticsearch (==7.12.0)", "elasticsearch-dsl (==7.3.0)", "email-validator (==1.1.2)", "entrypoints (==0.3)", "execnet (==1.8.0)", "flask (==1.1.2)", "flask-admin (==1.5.7)", "flask-alembic (==2.0.1)", "flask-assets (==2.0)", "flask-babelex (==0.9.4)", "flask-breadcrumbs (==0.5.1)", "flask-caching (==1.10.1)", "flask-celeryext (==0.3.4)", "flask-collect (==1.2.2)", "flask-cors (==3.0.10)", "flask-iiif (==0.6.1)", "flask-kvsession-invenio (==0.6.3)", "flask-limiter (==1.1.0)", "flask-login (==0.4.1)", "flask-mail (==0.9.1)", "flask-menu (==0.7.2)", "flask-oauthlib (==0.9.6)", "flask-principal (==0.4.0)", "flask-restful (==0.3.8)", "flask-security (==3.0.0)", "flask-shell-ipython (==0.4.1)", "flask-sqlalchemy (==2.4.4)", "flask-talisman (==0.5.0)", "flask-webpackext (==1.0.2)", "flask-wtf (==0.14.3)", "fs (==0.5.4)", "ftfy (==4.4.3)", "future (==0.18.2)", "html5lib (==1.1)", "idna (==2.10)", "infinity (==1.5)", "intervals (==0.9.1)", "invenio (==3.3.0)", "invenio-access (==1.4.2)", "invenio-accounts (==1.4.2)", "invenio-admin (==1.2.1)", "invenio-app (==1.2.7)", "invenio-assets (==1.1.5)", "invenio-base (==1.2.3)", "invenio-cache (==1.1.0)", "invenio-celery (==1.2.2)", "invenio-config (==1.0.3)", "invenio-db (==1.0.9)", "invenio-files-rest (==1.2.0)", "invenio-formatter (==1.0.3)", "invenio-i18n (==1.2.0)", "invenio-iiif (==1.1.0)", "invenio-indexer (==1.1.2)", "invenio-jsonschemas (==1.1.2)", "invenio-logging (==1.3.0)", "invenio-mail (==1.0.2)", "invenio-oaiserver (==1.2.0)", "invenio-oauth2server (==1.3.1)", "invenio-oauthclient (==1.4.0)", "invenio-pidstore (==1.2.2)", "invenio-previewer (==1.2.2)", "invenio-records (==1.3.2)", "invenio-records-files (==1.2.1)", "invenio-records-rest (==1.7.2)", "invenio-records-ui (==1.1.0)", "invenio-rest (==1.2.3)", "invenio-search (==1.3.1)", "invenio-search-ui (==1.2.0)", "invenio-theme (==1.1.4)", "ipython (==7.22.0)", "ipython-genutils (==0.2.0)", "isort (==5.8.0)", "itsdangerous (==1.1.0)", "jedi (==0.18.0)", "jinja2 (==2.11.3)", "jmespath (==0.10.0)", "jsmin (==2.2.2)", "jsonpatch (==1.32)", "jsonpointer (==2.1)", "jsonref (==0.2)", "jsonresolver (==0.3.1)", "jsonschema (==3.2.0)", "jupyter-client (==6.1.13)", "jupyter-core (==4.7.1)", "kombu (==5.0.2)", "limits (==1.5.1)", "lxml (==4.6.3)", "mako (==1.1.4)", "markupsafe (==1.1.1)", "marshmallow (==3.11.1)", "maxminddb (==2.0.3)", "maxminddb-geolite2 (==2018.703)", "mistune (==0.8.4)", "more-itertools (==8.7.0)", "msgpack (==1.0.2)", "nbconvert (==5.6.1)", "nbformat (==5.1.3)", "nest-asyncio (==1.5.1)", "node-semver (==0.1.1)", "oauthlib (==2.1.0)", "packaging (==20.9)", "pandocfilters (==1.4.3)", "parso (==0.8.2)", "passlib (==1.7.4)", "pep517 (==0.10.0)", "pep8 (==1.7.1)", "pexpect (==4.8.0)", "pickleshare (==0.7.5)", "pillow (==8.2.0)", "pluggy (==0.13.1)", "prompt-toolkit (==3.0.18)", "psycopg2-binary (==2.8.6)", "ptyprocess (==0.7.0)", "py (==1.10.0)", "pycparser (==2.20)", "pydocstyle (==6.0.0)", "pygments (==2.8.1)", "pyjwt (==2.0.1)", "pynpm (==0.1.2)", "pyparsing (==2.4.7)", "pyrsistent (==0.17.3)", "pytest (==4.6.11)", "pytest-cache (==1.0)", "pytest-cov (==2.10.1)", "pytest-flask (==0.15.1)", "pytest-invenio[docs] (==1.3.4)", "pytest-pep8 (==1.0.6)", "python-dateutil (==2.8.1)", "python-editor (==1.0.4)", "pytz (==2021.1)", "pywebpack (==1.2.0)", "pyzmq (==22.0.3)", "redis (==3.5.3)", "requests (==2.24.0)", "requests-oauthlib (==1.1.0)", "s3-client-lib (==0.1.4)", "s3transfer (==0.3.6)", "selenium (==3.141.0)", "sentry-sdk (==1.0.0)", "simplejson (==3.17.2)", "simplekv (==0.14.1)", "six (==1.15.0)", "snowballstemmer (==2.1.0)", "speaklater (==1.3)", "sqlalchemy (==1.3.24)", "sqlalchemy-continuum (==1.3.11)", "sqlalchemy-utils (==0.35.0)", "testpath (==0.4.4)", "toml (==0.10.2)", "tornado (==5.1.1)", "traitlets (==5.0.5)", "ua-parser (==0.10.0)", "uritools (==3.0.1)", "urllib3 (==1.25.11)", "validators (==0.18.2)", "vine (==5.0.0)", "wand (==0.6.6)", "wcwidth (==0.2.5)", "webargs (==5.5.3)", "webassets (==2.0)", "webencodings (==0.5.1)", "werkzeug (==1.0.1)", "wtforms (==2.3.3)", "wtforms-alchemy (==0.17.0)", "wtforms-components (==0.10.5)"]
 
 [[package]]
 name = "oarepo-communities"
-version = "2.0.4"
+version = "2.2.0"
 description = "OArepo module that adds support for communities"
 category = "dev"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
+boltons = "*"
 oarepo-enrollment-permissions = "*"
 oarepo-fsm = ">=1.6.1"
 oarepo-micro-api = "*"
+oarepo-search = "*"
 oarepo-ui = "*"
 
 [package.extras]
@@ -2549,14 +2551,14 @@ tests = ["requests-mock", "oarepo"]
 
 [[package]]
 name = "oarepo-micro-api"
-version = "3.3.61"
+version = "3.3.62"
 description = "OARepo REST API microservice"
 category = "dev"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-oarepo = ">=3.3.60,<3.4.0"
+oarepo = ">=3.3.61,<3.4.0"
 oarepo-heartbeat = "*"
 uwsgi = ">=2.0"
 uwsgi-tools = ">=1.1.1"
@@ -2564,7 +2566,7 @@ uwsgitop = ">=0.11"
 wrapt = ">=1.12.1,<2.0.0"
 
 [package.extras]
-tests = ["webtest", "oarepo[tests] (>=3.3.60,<3.4.0)"]
+tests = ["webtest", "oarepo[tests] (>=3.3.61,<3.4.0)"]
 
 [[package]]
 name = "oarepo-multilingual"
@@ -2617,8 +2619,23 @@ tests = ["oarepo[tests] (>=3.3.0,<3.4.0)", "uuid", "oarepo-validate", "pydocstyl
 validate = ["oarepo-validate (>=1.1.0)"]
 
 [[package]]
+name = "oarepo-search"
+version = "1.0.0"
+description = "OArepo module that adds support for communities"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+luqum = "*"
+
+[package.extras]
+all = ["oarepo[tests] (>=3.3.60,<3.4.0)", "pydocstyle", "isort"]
+tests = ["oarepo[tests] (>=3.3.60,<3.4.0)", "pydocstyle", "isort"]
+
+[[package]]
 name = "oarepo-taxonomies"
-version = "3.0.0a1"
+version = "3.0.0a4"
 description = "Wrapper that connect flask-taxonomies with Invenio"
 category = "dev"
 optional = false
@@ -2638,7 +2655,7 @@ tests = ["pytest", "pytest-cov", "oarepo (==3.3.26)"]
 
 [[package]]
 name = "oarepo-ui"
-version = "2.3.0"
+version = "2.3.1"
 description = "API for javascript user interface"
 category = "dev"
 optional = false
@@ -2775,7 +2792,7 @@ dev = ["pre-commit", "tox"]
 name = "ply"
 version = "3.11"
 description = "Python Lex & Yacc"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -3218,7 +3235,7 @@ widechars = ["wcwidth"]
 
 [[package]]
 name = "techlib-nr-common"
-version = "3.0.0a45"
+version = "3.0.0a46"
 description = "NR common data types"
 category = "main"
 optional = false
@@ -3228,6 +3245,7 @@ python-versions = ">=3.8,<4.0"
 idutils = ">=1.1.8,<2.0.0"
 isbnlib = ">=3.10.3,<4.0.0"
 oarepo-invenio-model = ">=2.0.0,<3.0.0"
+oarepo-search = ">=1.0.0,<2.0.0"
 python-stdnum = ">=1.16,<2.0"
 
 [package.extras]
@@ -3235,7 +3253,7 @@ docs = ["sphinx (>=1.5.1,<2.0.0)"]
 
 [[package]]
 name = "techlib-nr-events"
-version = "1.0.0a18"
+version = "1.0.0a20"
 description = "National repository events metadata model"
 category = "main"
 optional = false
@@ -3246,7 +3264,7 @@ techlib-nr-common = ">=3.0.0a45,<4.0.0"
 
 [[package]]
 name = "techlib-nr-generic"
-version = "1.0.0a3"
+version = "1.0.0a5"
 description = "NR generic model REST API"
 category = "main"
 optional = false
@@ -3264,7 +3282,7 @@ docs = ["sphinx (>=1.5.1,<2.0.0)"]
 
 [[package]]
 name = "techlib-nr-nresults"
-version = "1.0.0a15"
+version = "1.0.0a18"
 description = "National repository Nresults metadata model"
 category = "main"
 optional = false
@@ -3275,7 +3293,7 @@ techlib-nr-common = ">=3.0.0a45,<4.0.0"
 
 [[package]]
 name = "techlib-nr-theses"
-version = "1.0.0a6"
+version = "1.0.0a9"
 description = "Czech National Repository theses data model."
 category = "main"
 optional = false
@@ -3543,7 +3561,7 @@ timezone = ["python-dateutil"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "73f477c6f860ff13b097b07bc8b2a8ac0ff10b581fafd462a279dee93c1634c2"
+content-hash = "896fb15e32cab0733bf87b1cf030b3bf320c303debe3e6b80ab66f5d9a229c9a"
 
 [metadata.files]
 alembic = [
@@ -3608,12 +3626,12 @@ boltons = [
     {file = "boltons-20.2.1.tar.gz", hash = "sha256:dd362291a460cc1e0c2e91cc6a60da3036ced77099b623112e8f833e6734bdc5"},
 ]
 boto3 = [
-    {file = "boto3-1.17.48-py2.py3-none-any.whl", hash = "sha256:df5912350e092e795f72d8047a44d3f5af9690317acfe48147b9853a2f89b304"},
-    {file = "boto3-1.17.48.tar.gz", hash = "sha256:e86c15049dc07cb67e8b466795f004f1f23c1acf078d47283cd5e4a692a5aa37"},
+    {file = "boto3-1.17.49-py2.py3-none-any.whl", hash = "sha256:d5ef160442925f5944e4cde88589f0f195f6c284f05613114fc6bbc35e342fa7"},
+    {file = "boto3-1.17.49.tar.gz", hash = "sha256:a482135c30fa07eaf4370314dd0fb49117222a266d0423b2075aed3835ed1f04"},
 ]
 botocore = [
-    {file = "botocore-1.20.48-py2.py3-none-any.whl", hash = "sha256:af27a8133f5b8f6a55738ccd5efd35689f1822cfd447625a839ef7a991eab64f"},
-    {file = "botocore-1.20.48.tar.gz", hash = "sha256:99c4f96bffae406f6dec1fa94e0886993e5bcd8657604d950abb43a49121fa7c"},
+    {file = "botocore-1.20.49-py2.py3-none-any.whl", hash = "sha256:6a672ba41dd00e5c1c1824ca8143d180d88de8736d78c0b1f96b8d3cb0466561"},
+    {file = "botocore-1.20.49.tar.gz", hash = "sha256:f7f103fa0651c69dd360c7d0ecd874854303de5cc0869e0cbc2818a52baacc69"},
 ]
 cachelib = [
     {file = "cachelib-0.1.1-py3-none-any.whl", hash = "sha256:7df6e05b8dfccdeb869e171575580e5606cf1e82a166633b3cb406bc4f113fd0"},
@@ -4112,8 +4130,8 @@ isbnid-fork = [
     {file = "isbnid_fork-0.5.2.tar.gz", hash = "sha256:8d878866aa0e7f06e700a37fce586c7398ce4837da8bca39683db7028a9c3837"},
 ]
 isbnlib = [
-    {file = "isbnlib-3.10.6-py2.py3-none-any.whl", hash = "sha256:b213a843cf5e8b053a0d08994ea697f20d6070e10bdaaf5e9ecea3c0bb1d4599"},
-    {file = "isbnlib-3.10.6.tar.gz", hash = "sha256:b324c7c8689741bba6d71d1369d49780a24fe946b11a3c005d56e09bf705cd19"},
+    {file = "isbnlib-3.10.7-py2.py3-none-any.whl", hash = "sha256:cfb65800d60db10cc269751836989741f27592de768870c28a621c6a64cc55d0"},
+    {file = "isbnlib-3.10.7.tar.gz", hash = "sha256:81b33157da8e2c2a481f7ad471e1b576cf595298f03afd60c982f718b912dc89"},
 ]
 itsdangerous = [
     {file = "itsdangerous-1.1.0-py2.py3-none-any.whl", hash = "sha256:b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"},
@@ -4340,12 +4358,12 @@ node-semver = [
     {file = "node-semver-0.1.1.tar.gz", hash = "sha256:e29ee4e51efb6d82c55aef5d569b888842e62e6404ce95df18d80c421f8e7dac"},
 ]
 oarepo = [
-    {file = "oarepo-3.3.60-py2.py3-none-any.whl", hash = "sha256:58f8ed8aa64943e218422f0efde0c9d4a0cc9e64102f2d1c0b7880cac48a9146"},
-    {file = "oarepo-3.3.60.tar.gz", hash = "sha256:08170a7f17d0001d4b5f89dcbaaa66aed58a8bebd4ab94add6161cff78adce33"},
+    {file = "oarepo-3.3.61-py2.py3-none-any.whl", hash = "sha256:6aa31dd56e468159327fc71b6cfbbd3ce11f83616c2362beb25b8e4b8804e023"},
+    {file = "oarepo-3.3.61.tar.gz", hash = "sha256:e43a6fb6b3387c7ca46eda1000f3ad5de8b77e58a5e4a9f3b9e77120bf78c2be"},
 ]
 oarepo-communities = [
-    {file = "oarepo-communities-2.0.4.tar.gz", hash = "sha256:8dd88dab7c88bee41028da25cd2692d11064bf7ec48e9e88951de2e279dadbb4"},
-    {file = "oarepo_communities-2.0.4-py2.py3-none-any.whl", hash = "sha256:b70bdb20e374d1f7d1b20b4747946d75cff8732a32e5eb67c78778bc4825e1c0"},
+    {file = "oarepo-communities-2.2.0.tar.gz", hash = "sha256:2dc312e34b5bbea7309ba830004cc22e78505c007d973b30af0b6cf5c8639e87"},
+    {file = "oarepo_communities-2.2.0-py2.py3-none-any.whl", hash = "sha256:261e7b19dd777dd3099a17659277e1cf2298c8ce72dd9222b6bfed229bbef008"},
 ]
 oarepo-enrollment-permissions = [
     {file = "oarepo-enrollment-permissions-1.0.1.tar.gz", hash = "sha256:3c5338326c84c40550f126e67bcf8203e9f3887158db245a73aee566ff966c85"},
@@ -4375,8 +4393,8 @@ oarepo-mapping-includes = [
     {file = "oarepo_mapping_includes-1.4.4-py3-none-any.whl", hash = "sha256:b0b8a091854eaad23a5de462c0a0fa273784cfb13959a7f997e11851d95a40fb"},
 ]
 oarepo-micro-api = [
-    {file = "oarepo-micro-api-3.3.61.tar.gz", hash = "sha256:c38ca0b413ad1fd5e48c2c44280a6c48365f6c4ec26239935f3bf8d64577dcac"},
-    {file = "oarepo_micro_api-3.3.61-py2.py3-none-any.whl", hash = "sha256:c1364df7c8392bced377145e4aa6279fb6ce56f0d86b0f60e87c1f3ae4424372"},
+    {file = "oarepo-micro-api-3.3.62.tar.gz", hash = "sha256:a35287075b8de3cf1105c871501e0a7bccee617a965cac7485698ab3cde2365b"},
+    {file = "oarepo_micro_api-3.3.62-py2.py3-none-any.whl", hash = "sha256:2a98cc73c5bb8e608eec50d9d2c45d7eaa303a9637175c0dffc59a06b7abc3f9"},
 ]
 oarepo-multilingual = [
     {file = "oarepo_multilingual-2.5.0-py3-none-any.whl", hash = "sha256:7d37893ec8dbf8ad157c029a02cf15fffa507adb745de1bc0a6fe903a9729a2e"},
@@ -4390,13 +4408,17 @@ oarepo-references = [
     {file = "oarepo-references-1.11.2.tar.gz", hash = "sha256:b17ce504b82087d026343494b3718c2a97e6f74d1273c044df3dcdaaeacfa7ed"},
     {file = "oarepo_references-1.11.2-py2.py3-none-any.whl", hash = "sha256:6d070ef9aad5797167f616a19bc02b97f8b463fd2b6c9394b8ffb29752995ca3"},
 ]
+oarepo-search = [
+    {file = "oarepo-search-1.0.0.tar.gz", hash = "sha256:801113a6e062d4c47a587963260947db3514e288b054edb040b0782f773e5ea4"},
+    {file = "oarepo_search-1.0.0-py3-none-any.whl", hash = "sha256:184d691a7fca86575ddbf73ba04963614712edb250f4f543a79b81b43fbe45d7"},
+]
 oarepo-taxonomies = [
-    {file = "oarepo_taxonomies-3.0.0a1-py2.py3-none-any.whl", hash = "sha256:02ebb8c99f79bacf73759308a3af2b9841b0f31e5caa6b5a66b777b046c76a85"},
-    {file = "oarepo_taxonomies-3.0.0a1.tar.gz", hash = "sha256:be3f917c998e74f267f97a4e43fea087a97330e5bac3bc69d7335c6c72707074"},
+    {file = "oarepo_taxonomies-3.0.0a4-py2.py3-none-any.whl", hash = "sha256:673116e912edf2d48e9641d4ef3fef081342ee587aad7fe143001e20d7082f2d"},
+    {file = "oarepo_taxonomies-3.0.0a4.tar.gz", hash = "sha256:1d83ed8aba2cc89ff906178a2169ec8ccb45da10d28c857241824fdcff408896"},
 ]
 oarepo-ui = [
-    {file = "oarepo_ui-2.3.0-py3-none-any.whl", hash = "sha256:dcf183de97b0b9b41812fdc141b64e257796dda5387945ed6fe68e7e3b1f0203"},
-    {file = "oarepo_ui-2.3.0.tar.gz", hash = "sha256:d493769ecdf0afd72b14dff9f62e7561fd13455c1876a3755de161c815a374aa"},
+    {file = "oarepo_ui-2.3.1-py3-none-any.whl", hash = "sha256:b4200b623894d5791dd263548cbe2029208f44aa190e218d49bf756eb6ac5de1"},
+    {file = "oarepo_ui-2.3.1.tar.gz", hash = "sha256:e406ebbee4f52c2ac97b5bc40ab1abe5f52baa42c2ce8379b17eb00026c58375"},
 ]
 oarepo-validate = [
     {file = "oarepo-validate-1.5.3.tar.gz", hash = "sha256:517fdeb4302fcf28ef615921efc558f3dfb8af75167be3a4512f3cc9c44a8e82"},
@@ -4762,24 +4784,24 @@ tabulate = [
     {file = "tabulate-0.8.9.tar.gz", hash = "sha256:eb1d13f25760052e8931f2ef80aaf6045a6cceb47514db8beab24cded16f13a7"},
 ]
 techlib-nr-common = [
-    {file = "techlib-nr-common-3.0.0a45.tar.gz", hash = "sha256:696c77aeb610a61cb036e52f2b6726fd2dc7aebae1642331a3eb2aae738ce66b"},
-    {file = "techlib_nr_common-3.0.0a45-py3-none-any.whl", hash = "sha256:ed4ce5b2cfde3c7b7ba5efc73b246e8fbc280f5ab277d4b4daae35d19488a46a"},
+    {file = "techlib-nr-common-3.0.0a46.tar.gz", hash = "sha256:d9427cb2437fce65d3a45bd29554af8069d9747ea57d8cc4aba73815930ac12d"},
+    {file = "techlib_nr_common-3.0.0a46-py3-none-any.whl", hash = "sha256:4621465a712cf44494c1077c708701fa40fb5c5fd8effe5eb2252b602e5d1199"},
 ]
 techlib-nr-events = [
-    {file = "techlib-nr-events-1.0.0a18.tar.gz", hash = "sha256:9e08e3cdfb8ca676cc9b8c377d7daf7d990831cbf558756b2ffca4b152c82116"},
-    {file = "techlib_nr_events-1.0.0a18-py3-none-any.whl", hash = "sha256:c61cc637333a9908dd079b9f89c250091ba2bf4dbfed7d75a046439358a1960b"},
+    {file = "techlib-nr-events-1.0.0a20.tar.gz", hash = "sha256:5db619e9684d8970ccef04f4228270147b865d06a4d3e2bee538c2509870982b"},
+    {file = "techlib_nr_events-1.0.0a20-py3-none-any.whl", hash = "sha256:8087a3553429493eb9c16bfd2b3bb3a44aca39109bff84c91bb0f59283bd40c1"},
 ]
 techlib-nr-generic = [
-    {file = "techlib-nr-generic-1.0.0a3.tar.gz", hash = "sha256:4fec54601d3763d9822187ade69259c87bc85f9ee6aab943d748046f0abd50fa"},
-    {file = "techlib_nr_generic-1.0.0a3-py3-none-any.whl", hash = "sha256:9429ad31f915714c763ebaef6e294a421d8b736908020b79993c419db3de07b7"},
+    {file = "techlib-nr-generic-1.0.0a5.tar.gz", hash = "sha256:df3749ef34b45a0685e473b905cb5ca7b19f3e1bfe9b7e8eee225619c054b1db"},
+    {file = "techlib_nr_generic-1.0.0a5-py3-none-any.whl", hash = "sha256:c2d83426cc53eab7f5505f4726bc6d29acf765fd763ea4c7c79dd6075729fe35"},
 ]
 techlib-nr-nresults = [
-    {file = "techlib-nr-Nresults-1.0.0a15.tar.gz", hash = "sha256:9818bdd337d13434f7f148ce63853f01796fc30c357c101431fb6932c1d32c71"},
-    {file = "techlib_nr_Nresults-1.0.0a15-py3-none-any.whl", hash = "sha256:c0fa8609d6fc3d82e623cb6ad0e733c9d1181078bb657152ebc4f61f767811f1"},
+    {file = "techlib-nr-Nresults-1.0.0a18.tar.gz", hash = "sha256:5439a8c239055954a73bb720ab46b958bd7a2859bc780a73426c7106dafb1715"},
+    {file = "techlib_nr_Nresults-1.0.0a18-py3-none-any.whl", hash = "sha256:86055e31c1288375e37a51b67414f437539180e2ad45581597ba995cd10fc1e4"},
 ]
 techlib-nr-theses = [
-    {file = "techlib-nr-theses-1.0.0a6.tar.gz", hash = "sha256:7f223197bbc5ca73a2140c0d59e902667a8268bfff2330e8d8f69ee3b7f08f1c"},
-    {file = "techlib_nr_theses-1.0.0a6-py3-none-any.whl", hash = "sha256:19e1acc450d123cd66a5b1d6e707549005b2930c7838bceefdaaf5a30ae18246"},
+    {file = "techlib-nr-theses-1.0.0a9.tar.gz", hash = "sha256:103860f7f432537b15f64ea2b4bc5d6b842d86a8a332a826c82246958bc92cfe"},
+    {file = "techlib_nr_theses-1.0.0a9-py3-none-any.whl", hash = "sha256:71f7f40998ed6f3de819fb2c95210c37e898967a7f3775b7e1e17f18d874b54b"},
 ]
 testpath = [
     {file = "testpath-0.4.4-py2.py3-none-any.whl", hash = "sha256:bfcf9411ef4bf3db7579063e0546938b1edda3d69f4e1fb8756991f5951f85d4"},
