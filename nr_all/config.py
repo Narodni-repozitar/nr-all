@@ -30,7 +30,8 @@ RECORDS_REST_ENDPOINTS = {
         default_media_type='application/json',
         max_result_window=1000000,
         search_factory_imp=community_search_factory,
-        links_factory_imp=partial(community_record_links_factory, original_links_factory=nr_links_factory),
+        links_factory_imp=partial(community_record_links_factory,
+                                  original_links_factory=nr_links_factory),
 
         # not used really
         item_route='/all/not-used-but-must-be-present',
@@ -59,7 +60,8 @@ RECORDS_REST_ENDPOINTS = {
         default_media_type='application/json',
         max_result_window=1000000,
         search_factory_imp=community_search_factory,
-        links_factory_imp=partial(community_record_links_factory, original_links_factory=nr_links_factory),
+        links_factory_imp=partial(community_record_links_factory,
+                                  original_links_factory=nr_links_factory),
 
         # not used really
         item_route='/all/not-used-but-must-be-present',
@@ -88,7 +90,8 @@ RECORDS_REST_ENDPOINTS = {
         default_media_type='application/json',
         max_result_window=1000000,
         search_factory_imp=community_search_factory,
-        links_factory_imp=partial(community_record_links_factory, original_links_factory=nr_links_factory),
+        links_factory_imp=partial(community_record_links_factory,
+                                  original_links_factory=nr_links_factory),
 
         # not used really
         item_route='/all/not-used-but-must-be-present',
@@ -109,7 +112,8 @@ RECORDS_REST_ENDPOINTS = {
 
 RECORDS_REST_FACETS = {
     all_index_name: {
-        "aggs": translate_facets({**FACETS, **CURATOR_FACETS, **DRAFT_IMPORTANT_FACETS}, label='{facet_key}',
+        "aggs": translate_facets({**FACETS, **CURATOR_FACETS, **DRAFT_IMPORTANT_FACETS},
+                                 label='{facet_key}',
                                  value='{value_key}'),
         "filters": {**FILTERS, **CURATOR_FILTERS, **DRAFT_IMPORTANT_FILTERS}
     },
@@ -128,6 +132,12 @@ RECORDS_REST_SORT_OPTIONS = {
         'best_match': {
             'title': 'Best match',
             'fields': ['_score'],
+            'default_order': 'desc',
+            'order': 1,
+        },
+        'by_id': {
+            'title': 'Chronological',
+            'fields': ['control_number'],
             'default_order': 'desc',
             'order': 1,
         }
