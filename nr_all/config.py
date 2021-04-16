@@ -109,7 +109,6 @@ RECORDS_REST_ENDPOINTS = {
 
 # TODO: dodělat facety a filtry pro souhrnný index
 
-
 RECORDS_REST_FACETS = {
     all_index_name: {
         "aggs": translate_facets({**FACETS, **CURATOR_FACETS, **DRAFT_IMPORTANT_FACETS},
