@@ -37,24 +37,26 @@ class NrJSONSerializer(JSONSerializer):
 
     @staticmethod
     def post_process_search_result(search_result):
-        access_rights = search_result.get("aggregations", {}).get("accessRights", None)
-        if access_rights:
-            buckets = access_rights.get("buckets", [])
-            open_access: int = 0
-            close_access: int = 0
-            for bucket in buckets:
-                if bucket["key"] == "open access":
-                    open_access += bucket["doc_count"]
-                else:
-                    close_access += bucket["doc_count"]
-            new_buckets = [
-                {"key": 1, "key_as_string": "true", "doc_count": open_access},
-                {"key": 0, "key_as_string": "false", "doc_count": close_access}
-            ]
-            new_buckets = [bucket for bucket in new_buckets if bucket["doc_count"] > 0]
-            is_open_access = deepcopy(access_rights)
-            is_open_access["buckets"] = new_buckets
-            search_result["aggregations"]["accessRights"] = is_open_access
+        access_rights_container = search_result.get("aggregations", {}).get("nested#accessRights", None)
+        if access_rights_container:
+            access_rights = access_rights_container.get("sterms#inner_facet", None)
+            if access_rights:
+                buckets = access_rights.get("buckets", [])
+                open_access: int = 0
+                close_access: int = 0
+                for bucket in buckets:
+                    if bucket["key"] == "open access":
+                        open_access += bucket["doc_count"]
+                    else:
+                        close_access += bucket["doc_count"]
+                new_buckets = [
+                    {"key": 1, "key_as_string": "true", "doc_count": open_access},
+                    {"key": 0, "key_as_string": "false", "doc_count": close_access}
+                ]
+                new_buckets = [bucket for bucket in new_buckets if bucket["doc_count"] > 0]
+                is_open_access = deepcopy(access_rights)
+                is_open_access["buckets"] = new_buckets
+                access_rights_container["sterms#inner_facet"] = is_open_access
         return search_result
 
 
