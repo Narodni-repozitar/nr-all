@@ -33,6 +33,8 @@ from nr_nresults.record import NResultBaseRecord
 from nr_theses.fetchers import nr_theses_id_fetcher
 from nr_nresults.fetchers import nr_nresults_id_fetcher
 from nr_theses.record import ThesisBaseRecord
+from nr_datasets.record import DatasetBaseRecord
+from nr_datasets.fetchers import nr_datasets_id_fetcher
 
 
 @functools.lru_cache(maxsize=1)
@@ -41,6 +43,7 @@ def prepare_schemas():
     EventBaseRecord._prepare_schemas()
     ThesisBaseRecord._prepare_schemas()
     NResultBaseRecord._prepare_schemas()
+    DatasetBaseRecord._prepare_schemas()
 
 
 def nr_all_id_fetcher(record_uuid, data):
@@ -66,6 +69,8 @@ def nr_all_id_fetcher(record_uuid, data):
         fetched_pid = nr_theses_id_fetcher(record_uuid, data)
     elif schema == NResultBaseRecord.PREFERRED_SCHEMA:
         fetched_pid = nr_nresults_id_fetcher(record_uuid, data)
+    elif schema == DatasetBaseRecord.PREFERRED_SCHEMA:
+        fetched_pid = nr_datasets_id_fetcher(record_uuid, data)
     else:
         raise ValueError(f'Unknown conversion of schema "{schema}" to pid type')
 

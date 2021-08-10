@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "techlib-nr-all"
-version = "1.0.0a12"
+version = "1.0.0a13"
 description = "Czech National Repository index that store all records from all metadata models"
 authors = ["Daniel Kopecký <Daniel.Kopecky@techlib.cz>"]
 packages = [{include='nr_all'}]
@@ -13,6 +13,7 @@ techlib-nr-theses = {version = "^1.0.0a3", allow-prereleases = true}
 techlib-nr-Nresults = {version = "^1.0.0a13", allow-prereleases = true}
 techlib-nr-events = {version = "^1.0.0a14", allow-prereleases = true}
 techlib-nr-generic = {version = "^1.0.0a2", allow-prereleases = true}
+techlib-nr-datasets = {version = "^1.0.0-alpha.3", allow-prereleases = true}
 
 
 [tool.poetry.dev-dependencies]

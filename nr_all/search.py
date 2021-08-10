@@ -7,7 +7,7 @@ class AllRecordsSearch(NRRecordsSearch):
         'control_number', 'oarepo:validity.valid', 'oarepo:draft', 'title',
         'dateIssued', 'creator', 'resourceType', 'contributor', 'keywords',
         'subject', 'abstract', 'state', 'accessRights',
-        'language',
+        'language', 'id', '_primary_community', 'communities',
         '_administration.primaryCommunity',
         '_administration.communities',
         '$schema'
