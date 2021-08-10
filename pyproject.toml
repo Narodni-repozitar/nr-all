@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "techlib-nr-all"
-version = "1.0.0a13"
+version = "1.0.0a14"
 description = "Czech National Repository index that store all records from all metadata models"
 authors = ["Daniel Kopecký <Daniel.Kopecky@techlib.cz>"]
 packages = [{include='nr_all'}]
@@ -11,7 +11,7 @@ python = "^3.8"
 techlib-nr-common = {version = "^3.0.0a45", allow-prereleases = true}
 techlib-nr-theses = {version = "^1.0.0a3", allow-prereleases = true}
 techlib-nr-Nresults = {version = "^1.0.0a13", allow-prereleases = true}
-techlib-nr-events = {version = "^1.0.0a14", allow-prereleases = true}
+techlib-nr-events = {version = "^1.0.0a", allow-prereleases = true}
 techlib-nr-generic = {version = "^1.0.0a2", allow-prereleases = true}
 techlib-nr-datasets = {version = "^1.0.0-alpha.3", allow-prereleases = true}
 
@@ -31,7 +31,6 @@ oarepo-taxonomies = {version = "^3.0.0-alpha.1", allow-prereleases = true}
 oarepo-invenio-model = "^2.1.2"
 oarepo-multilingual = ">=2.4.3"
 oarepo-communities = "^2.0.0"
-
 
 
 [tool.poetry.plugins."invenio_config.module"]

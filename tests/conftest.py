@@ -21,6 +21,8 @@ from invenio_accounts.models import User
 from invenio_base.signals import app_loaded
 from invenio_db import InvenioDB
 from invenio_db import db as db_
+from invenio_files_rest.ext import InvenioFilesREST
+from invenio_files_rest.models import Location
 from invenio_indexer import InvenioIndexer
 from invenio_jsonschemas import InvenioJSONSchemas
 from invenio_pidstore import InvenioPIDStore
@@ -60,6 +62,7 @@ def app():
         CELERY_TASK_ALWAYS_EAGER=True,
         CELERY_RESULT_BACKEND='cache',
         CELERY_CACHE_BACKEND='memory',
+        FILES_REST_DEFAULT_STORAGE_CLASS='S',
         CELERY_TASK_EAGER_PROPAGATES=True,
         SUPPORTED_LANGUAGES=["cs", "en"],
         ELASTICSEARCH_DEFAULT_LANGUAGE_TEMPLATE={
@@ -85,6 +88,7 @@ def app():
     InvenioIndexer(app)
     InvenioRecords(app)
     InvenioRecordsREST(app)
+    InvenioFilesREST(app)
     InvenioPIDStore(app)
     app.url_map.converters['pid'] = PIDConverter
     OarepoTaxonomies(app)
@@ -197,6 +201,20 @@ def permission_client(app, db):
     from flask_taxonomies.models import Base
     Base.metadata.create_all(db.engine)
     return app.test_client()
+
+
+@pytest.yield_fixture()
+def default_location(db):
+    """File system location."""
+    loc = Location(
+        name='testloc',
+        uri='/tmp/',
+        default=True
+    )
+    db.session.add(loc)
+    db.session.commit()
+
+    yield loc
 
 
 @pytest.fixture
@@ -702,6 +720,17 @@ def base_theses():
 
 
 @pytest.fixture()
+def base_datasets():
+    return {
+        "creators": [
+            {
+                "name": "Daniel Kopecký"
+            }
+        ],
+    }
+
+
+@pytest.fixture()
 def nresult_data(base_json, base_nresult):
     return {**base_json, **base_nresult}
 
@@ -715,3 +744,8 @@ def theses_data(base_json, base_theses):
 def events_data(base_json, base_event):
     base_json["events"] = [base_event]
     return base_json
+
+
+@pytest.fixture()
+def datasets_data(base_json, base_datasets):
+    return {**base_json, **base_datasets}
