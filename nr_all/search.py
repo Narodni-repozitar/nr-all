@@ -5,11 +5,11 @@ from nr_common.search import NRRecordsSearch
 class AllRecordsSearch(NRRecordsSearch):
     LIST_SOURCE_FIELDS = [
         'control_number', 'oarepo:validity.valid', 'oarepo:draft', 'title',
-        'dateIssued', 'creator', 'creators', 'resourceType', 'contributors', 'keywords',
-        'subject', 'abstract', 'state', 'accessRights',
-        'language', 'id', '_primary_community', 'communities',
-        '_administration.primaryCommunity',
-        '_administration.communities',
+        'dateIssued', 'creator', 'creators', 'resource_type', 'contributors', 'keywords',
+        'subject', 'abstract', 'state', 'accessRights', '_files',
+        'languages', 'id', '_primary_community', 'communities',
+        '_administration.primaryCommunity', 'publication_date',
+        '_administration.communities', 'rights',
         '$schema'
     ]
 
